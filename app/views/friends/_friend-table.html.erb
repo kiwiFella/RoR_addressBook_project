@@ -1,0 +1,11 @@
+<%# 
+    this outputs a table row for each friend
+ %>
+    <tr id="<%= dom_id friend %>">
+      <th scope="row"><%= friend.id %></th>
+      <td><%= friend.first_name %></td>
+      <td><%= friend.last_name %></td>
+      <td><%= friend.email %></td>
+      <td><%= friend.phone %></td>
+      <td><%= friend.twitter %></td>
+    </tr>
