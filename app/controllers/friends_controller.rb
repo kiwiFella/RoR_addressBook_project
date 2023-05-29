@@ -5,7 +5,8 @@ class FriendsController < ApplicationController
 
   # GET /friends or /friends.json
   def index
-    @friends = Friend.all
+    # @friends = Friend.all
+    @friends = Friend.where(user_id: current_user) #only fetch id's that belong to logged in user
   end
 
   # GET /friends/1 or /friends/1.json
@@ -75,7 +76,8 @@ class FriendsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_friend
-      @friend = Friend.find(params[:id])
+        @friend = Friend.find(params[:id])
+        
     end
 
     # Only allow a list of trusted parameters through.
